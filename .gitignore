@@ -2,6 +2,7 @@ fmg
 # Data file
 *.dat 
 *.bin
+*.pdf
 
 # Prerequisites
 *.d

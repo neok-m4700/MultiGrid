@@ -16,8 +16,8 @@ gcc -c -O3 ../../src/multigrid.c -o multigrid.o
 
 gcc -o tst main.o prolongation.o  matfill.o restriction.o solve.o residual.o smoothing.o output.o multigrid.o vcycle.o addint.o -lm 
 
-./tst $1 $2
+./tst $1 $2 || exit 1
 
 
 rm  main.o prolongation.o  matfill.o restriction.o solve.o residual.o smoothing.o output.o multigrid.o  vcycle.o addint.o
-python3 plot.py $1 
+python3 plot.py $1 'nfull'

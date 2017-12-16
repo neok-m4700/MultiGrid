@@ -6,6 +6,6 @@ gcc -c -O3 ../../src/prolongation.c -o prolongation.o
 
 gcc -o tst main.o restriction.o prolongation.o  -lm 
 
-./tst $1
+./tst $1 || exit 1
 
 rm main.o restriction.o prolongation.o

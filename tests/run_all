@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+. activate py3
+
+(
+  cd test_restriction
+  ./run_test 6 2
+  ./run_test_full 6 2
+)
+
+(
+  cd test_multigrid
+  ./run_test 6 2
+  ./run_test_full 6 2
+)
