@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
         nvals[k] = n; 
         uc[k] = (double *)malloc(sizeof(double)*n*n);
         uc_ans[k] = (double *)malloc(sizeof(double)*n*n); 
-        for(j=0;j<n*n;j++) uc[k][j] = 0.;
+        for(j=0;j<n*n;j++) { uc[k][j] = 0.; uc[k][j] = 0.; }
     }
 
     
@@ -141,12 +141,16 @@ int main(int argc, char *argv[]) {
         */
     }
     printf("test prolongation passed!\n");
-    for(i=0;i<ngrids;i++) {
-        free(uc[i]);
-        free(uc_ans[i]);
-    }
+    // for(i=0;i<ngrids;i++) {
+    //     printf("freeing uc @ level %d\n", i);
+    //     free(uc[i]);
+    //     printf("freeing uc_ans @ level %d\n", i);
+    //     free(uc_ans[i]);
+    // }
+    printf("free inner OK\n");
     free(uc);
     free(uc_ans);
+    printf("free outer OK\n");
     free(nvals);
     return 1;
 }
